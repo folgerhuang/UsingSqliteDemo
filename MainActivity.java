@@ -1,18 +1,13 @@
 package com.jikexueyuan.usingsqlitedemo;
 
-import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 import android.database.CursorWrapper;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
-import android.widget.Toast;
 
 import com.jikexuanyuan.db.DBManager;
 import com.jikexuanyuan.db.Person;
@@ -62,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void update(View view) {
         Person person = new Person();
-       person.setName("John");
+        person.setName("John");
         person.setAge(23);
         mgr.updateAge(person);
     }
@@ -102,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         //确保查询结果中有"_id"列
-        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,R.layout.personitem,
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.personitem,
                 cursorWrapper, new String[]{"name", "info"}, new int[]{R.id.name, R.id.tv1});
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
